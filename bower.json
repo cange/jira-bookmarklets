@@ -1,8 +1,8 @@
 {
   "name": "jira-bookmarklets",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "authors": [
-    "Christian Angermann <christian.angermann@xing.com>"
+    "Christian Angermann <psykmedia@gmail.com>"
   ],
   "description": "A collection of bookmarklets that helps you to print your JIRA tickets",
   "keywords": [
