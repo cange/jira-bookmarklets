@@ -1,4 +1,4 @@
-# JIRA Bookmarklets v2.2.2 [![Build Status](https://travis-ci.org/cange/jira-bookmarklets.png?branch=master)](https://travis-ci.org/cange/jira-bookmarklets)
+# JIRA Bookmarklets v2.2.3 [![Build Status](https://travis-ci.org/cange/jira-bookmarklets.png?branch=master)](https://travis-ci.org/cange/jira-bookmarklets)
 
 This is a collection of client side script helpers.
 The helper gives you the possibility to print your JIRA Issues/Tickets.
@@ -149,6 +149,10 @@ adjust this in the `src/config.json` file.
 ## Release notes
 
 ### Version 2
+
+**v2.2.3**
+
+- Fix broken scrum layout by limiting title text length
 
 **v2.2.2**
 
