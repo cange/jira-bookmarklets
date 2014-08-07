@@ -30,7 +30,7 @@ module.exports = function (grunt) {
       printPluginFooter: function (layout) {
         var options = layout ? ', { layoutName: ' + layout + ' }' : '';
         return '' +
-          "var xingJiraApp = new xing.jira.Application('<%= appConfig.cssMin.src %>'" + options + ");" +
+          "var xingJiraApp = new xing.jira.Application(jQuery, '<%= appConfig.cssMin.src %>'" + options + ");" +
           'xingJiraApp.versionTimestamp="<%= grunt.template.today("yyyy-mm-dd h:MM:ss TT") %>";' +
           'xingJiraApp.version="<%= pkg.version %>";' +
           'xingJiraApp.showPopup();' +
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       addPluginFooter: function (layout) {
         var options = layout ? ', { layoutName: ' + layout + ' }' : '';
         return '' +
-          'var xingJiraApp = new xing.jira.Application("", ' + options + ');' +
+          'var xingJiraApp = new xing.jira.Application(jQuery, "", ' + options + ');' +
           'xingJiraApp.versionTimestamp="<%= grunt.template.today("yyyy-mm-dd h:MM:ss TT") %>";' +
           'xingJiraApp.version="<%= pkg.version %>";' +
           'xingJiraApp.cacheTicketHandler();' +

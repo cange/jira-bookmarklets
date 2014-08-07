@@ -4,7 +4,7 @@ describe('xing.core.TicketCache', function () {
   var subject, expected, actual;
 
   beforeEach(function () {
-    subject = new xing.core.TicketCache();
+    subject = new xing.core.TicketCache(jQuery);
   });
 
   afterEach(function () {

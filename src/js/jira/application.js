@@ -12,11 +12,12 @@ Namespace.create('xing.jira');
  * @requires xing.core.I18n
  * @requires xing.jira.TableMapCell
  * @type Object
+ * @param {jQuery} $ jQuery object
  * @param {String} cssResources A string of CSS definitions. e.g. 'body { color: red; }'
  * @param {Object} options Hash of optional parameters
  *   @param {Object} [options.layoutName] Layout class selector necessary for specific themes
  */
-xing.jira.Application = function (cssResources, options) {
+xing.jira.Application = function ($, cssResources, options) {
   'use strict';
 
   var scope = this,
@@ -35,7 +36,7 @@ xing.jira.Application = function (cssResources, options) {
   scope.initialze = function (cssResources, options) {
     scope.layoutName = options && options.layoutName || '';
     observer  = new nsXC.Observer();
-    ticketCache    = new nsXC.TicketCache();
+    ticketCache    = new nsXC.TicketCache($);
     tableBuilder   = new nsXC.table.Builder();
     markup         = new nsXC.Markup();
     local          = (new nsXC.I18n()).local();

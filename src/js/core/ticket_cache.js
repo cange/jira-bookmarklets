@@ -4,8 +4,9 @@ Namespace.create('xing.core');
  * @module xing.core
  * @class TicketCache
  * @requires String
+ * @requires jQuery
  */
-xing.core.TicketCache = function () {
+xing.core.TicketCache = function ($) {
   'use strict';
 
   var scope = this,

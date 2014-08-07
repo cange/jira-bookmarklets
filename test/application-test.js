@@ -9,8 +9,8 @@ $.get('../build/main.min.css')
   })
 ;
 function run(cssResources) {
-  // xingJiraApp = new xing.jira.Application(cssResources);
-  xingJiraApp = new xing.jira.Application(cssResources, {layoutName: xing.core.table.layout.SCRUM_LAYOUT});
+  // xingJiraApp = new xing.jira.Application(jQuery, cssResources);
+  xingJiraApp = new xing.jira.Application(jQuery, cssResources, {layoutName: xing.core.table.layout.SCRUM_LAYOUT});
   xingJiraApp.showPopup();
   var AJS = {};
   AJS.messages = {};
