@@ -133,6 +133,46 @@ module.exports = function (grunt) {
       }
     },
 
+    concat: {
+      print: {
+        options: {
+          banner: appConfig.templates.banner(),
+          footer: appConfig.templates.printPluginFooter()
+        },
+        files: {
+          'build/ticket-print-bookmarklet.dev.js': appConfig.src
+        }
+      },
+      printScrum: {
+        options: {
+          beautify: true,
+          banner: appConfig.templates.banner(),
+          footer: appConfig.templates.printPluginFooter('xing.core.table.layout.SCRUM_LAYOUT')
+        },
+        files: {
+          'build/ticket-print-lay-scrum-bookmarklet.dev.js': appConfig.src
+        }
+      },
+      add: {
+        options: {
+          banner: appConfig.templates.banner(),
+          footer: appConfig.templates.addPluginFooter()
+        },
+        files: {
+          'build/add-ticket-bookmarklet.dev.js': appConfig.src
+        }
+      },
+      addScrum: {
+        options: {
+          banner: appConfig.templates.banner(),
+          footer: appConfig.templates.addPluginFooter('xing.core.table.layout.SCRUM_LAYOUT')
+        },
+        files: {
+          'build/add-ticket-lay-scrum-bookmarklet.dev.js': appConfig.src
+        }
+      }
+    },
+
     uglify: {
       sdk: {
         options: {
@@ -143,7 +183,7 @@ module.exports = function (grunt) {
           'build/sdk-loader.js': ['src/js/sdk/loader.js']
         }
       },
-      printBookmarklet: {
+      print: {
         options: {
           banner: appConfig.templates.banner(),
           footer: appConfig.templates.printPluginFooter()
@@ -152,8 +192,9 @@ module.exports = function (grunt) {
           'build/ticket-print-bookmarklet.js': appConfig.src
         }
       },
-      printBookmarkletScrum: {
+      printScrum: {
         options: {
+          beautify: true,
           banner: appConfig.templates.banner(),
           footer: appConfig.templates.printPluginFooter('xing.core.table.layout.SCRUM_LAYOUT')
         },
@@ -161,7 +202,7 @@ module.exports = function (grunt) {
           'build/ticket-print-lay-scrum-bookmarklet.js': appConfig.src
         }
       },
-      addBookmarlet: {
+      add: {
         options: {
           banner: appConfig.templates.banner(),
           footer: appConfig.templates.addPluginFooter()
@@ -170,7 +211,7 @@ module.exports = function (grunt) {
           'build/add-ticket-bookmarklet.js': appConfig.src
         }
       },
-      addBookmarletScrum: {
+      addScrum: {
         options: {
           banner: appConfig.templates.banner(),
           footer: appConfig.templates.addPluginFooter('xing.core.table.layout.SCRUM_LAYOUT')
@@ -214,7 +255,13 @@ module.exports = function (grunt) {
     }, config.delay);
   });
 
-  grunt.registerTask('build',   ['sass:dist', 'cssmin', 'uglify', 'string-replace']);
+  grunt.registerTask('build',   [
+    'sass:dist',
+    'cssmin',
+    'concat',
+    'uglify',
+    'string-replace'
+  ]);
   grunt.registerTask('test',    ['jasmine:all']);
   grunt.registerTask('default', 'build');
 

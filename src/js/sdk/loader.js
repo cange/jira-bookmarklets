@@ -17,6 +17,7 @@
   var doc = document,
     scriptTag = doc.createElement('script'),
     environments = ['master', 'develop'],
+    suffix = ['', '.dev'],
     kits = [
       'ticket-print',
       'add-ticket',
@@ -25,7 +26,7 @@
     ],
     environment = environments[options.env],
     kit = kits[options.kit],
-    url = options.path + environment + '/build/' + kit + '-bookmarklet.js'
+    url = options.path + environment + '/build/' + kit + '-bookmarklet' + suffix[options.env] + '.js'
   ;
   scriptTag.setAttribute('src', url);
   doc.head.appendChild(scriptTag);
