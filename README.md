@@ -1,4 +1,4 @@
-# JIRA Bookmarklets v2.2.3 [![Build Status](https://travis-ci.org/cange/jira-bookmarklets.png?branch=master)](https://travis-ci.org/cange/jira-bookmarklets)
+# JIRA Bookmarklets v2.2.3 [![Build Status](https://travis-ci.org/cange/jira-bookmarklets.svg?branch=2.2.3)](https://travis-ci.org/cange/jira-bookmarklets)
 
 This is a collection of client side script helpers.
 The helper gives you the possibility to print your JIRA Issues/Tickets.
